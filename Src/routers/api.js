@@ -1,30 +1,26 @@
-// Importação do módulo "express"
-var express = require("express");
-
-// Criação de uma instância do Express
-var app = express();
-
-// Configuração do middleware para análise de dados codificados na URL
-app.use(express.urlencoded({ extended: true }));
-
-// Configuração do middleware para análise de dados no formato JSON
+let express = require("express");
+let app = express();
+app.use(express.urlencoded({extended : true}));
 app.use(express.json());
 
-// Criação do objeto de roteamento
 const router = express.Router();
-
-// Definição da rota padrão ("/")
-app.use('/', router.get('/', (req, res) => {
-    res.status(200).send("<h1>API - CHAT</h1>");
+app.use('/', router.get('/', (req, res)=>{
+    res.status(200).send("<h1>API-CHAT</h1>")
 }));
 
-// Definição da rota "/sobre"
-app.use("/", router.get("/sobre", (req, res, next) => {
+// Rota para ver versão do chat
+app.use("/", router.get("/sobre", (resq, res, next) => {
     res.status(200).send({
-        "nome": "api-node-mongo",
-        "versão": "1.0.0",
+        "nome":"API - CHAT",
+        "versão": "0.1.0",
         "autor": "Gustavo Andrade"
-    });
+    })
 }));
-// Exportação do objeto "app" para uso em outros módulos
+
+//Rota para listar salas
+app.use("/salas", router.get("/salas", async(req, res, next) => {
+    const salaController = require("");
+    let resp=await salaController.get();
+    res.status(200).send(resp);
+}));
 module.exports = app;
