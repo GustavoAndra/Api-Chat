@@ -17,10 +17,11 @@ app.use("/", router.get("/sobre", (resq, res, next) => {
     })
 }));
 
-//Rota para listar salas
 app.use("/salas", router.get("/salas", async(req, res, next) => {
-    const salaController = require("");
-    let resp=await salaController.get();
-    res.status(200).send(resp);
+  const salaController = require("../controllers/salacontroller");
+  let resp=await salaController.get();
+  res.status(200).send(resp);
 }));
+
+
 module.exports = app;
