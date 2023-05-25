@@ -23,5 +23,17 @@ app.use("/salas", router.get("/salas", async(req, res, next) => {
   res.status(200).send(resp);
 }));
 
+app.use("/entrar", router.get("/entrar", async(req, res, next) => {
+    const usuarioController = require("../controllers/usuariocontroller");
+    let resp=await usuarioController.get();
+    res.status(200).send(resp);
+  }));
+
+  app.use("/sala/entrar", router.put("/sala/entrar", async (req, res)=>{
+    if(!token.checkToken(req.headers.token,req.headers.iduser,req.headers.nick)) 
+    return false;
+    let resp= await salaController.entrar(req.headers.iduser, req.query.idsala);
+    res.status(200).send(resp);
+  }))
 
 module.exports = app;

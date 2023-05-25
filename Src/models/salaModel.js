@@ -1,4 +1,4 @@
-const db = require("../models/modeldb");
+const db = require("./db");
 function listarSalas() {
     return db.findAll("salas");
 }
