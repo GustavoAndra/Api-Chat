@@ -13,7 +13,7 @@ app.use((req, res, next) => {
 console.log(process.env.API_PORT);
 
 // Atribuição do valor da variável de ambiente API_PORT à variável "port"
-let port = process.env.API_PORT;
+let port = process.env.API_PORT ||5000;
 
 // Inicialização do servidor para escutar na porta especificada
 app.listen(port);
