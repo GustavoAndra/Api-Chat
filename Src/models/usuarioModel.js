@@ -1,5 +1,5 @@
 const { MongoClient, ObjectId } = require("mongodb"); // Importando as dependências necessárias do pacote 'mongodb'
-
+const db = require('./db')
 let singleton;
 
 // Função para conectar ao banco de dados
@@ -22,35 +22,38 @@ async function findAll(collection) {
 // Função para registrar um usuário ao entrar
 async function entrar(nick) {
     const db = await connect(); // Obtendo a conexão com o banco de dados
-    return db.collection("usuarios").insertOne({ nick: nick }); // Inserindo um novo usuário na coleção "usuarios"
+    return db.collection("usuario").insertOne({ nick: nick }); // Inserindo um novo usuário na coleção "usuarios"
 }
 
 // Função para buscar um usuário pelo idUser
 async function buscarUsuario(idUser) {
     const db = await connect(); // Obtendo a conexão com o banco de dados
-    return db.collection("usuarios").findOne({ _id: ObjectId(idUser) }); // Buscando um usuário na coleção "usuarios" pelo ID
+    return db.collection("usuario").findOne({ _id: ObjectId(idUser) }); // Buscando um usuário na coleção "usuarios" pelo ID
 }
 
 // Função para alterar um usuário
 async function alterarUsuario(user) {
     const db = await connect(); // Obtendo a conexão com o banco de dados
-    return db.collection("usuarios").updateOne({ _id: user._id }, { $set: user }); // Atualizando um usuário na coleção "usuarios"
+    return db.collection("usuario").updateOne({ _id: user._id }, { $set: user }); // Atualizando um usuário na coleção "usuarios"
 }
 
 // Função para registrar um usuário
 async function registrarUsuario(nick) {
-    try {
+    return await db.insertOne('usuario',{'nick':nick})
+
+
+    /*try {
         const db = await connect(); // Obtendo a conexão com o banco de dados
         const usuario = {
             nick: nick,
             dataRegistro: new Date()
-        };
+        };console.log("bjsdhb")
   
-        const result = await db.collection("usuarios").insertOne(usuario); // Inserindo um novo usuário na coleção "usuarios"
+        const result = await db.collection("usuario").insertOne(usuario); // Inserindo um novo usuário na coleção "usuarios"
         return result;
     } catch (error) {
         throw new Error("Erro ao registrar usuário: " + error.message);
-    }
+    }*/
 }
 
 module.exports = {

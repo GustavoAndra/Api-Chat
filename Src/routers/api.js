@@ -20,7 +20,7 @@ app.use("/", router.get("/sobre", (req, res, next) => {
     });
 }));
 
-app.use("/entrar", router.get("/entrar", async (req, res, next) => {
+app.use("/entrar", router.post("/entrar", async (req, res, next) => {
     const usuarioController = require("../controllers/usuariocontroller");
     let resp = await usuarioController.entrar(req.body.nick);
     res.status(200).send(resp);

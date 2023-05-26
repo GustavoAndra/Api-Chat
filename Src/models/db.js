@@ -5,7 +5,6 @@ let singleton;
 // Função para conectar ao banco de dados
 async function connect() {
     if (singleton) return singleton;
-
     const client = new MongoClient(process.env.DB_HOST); // Criando uma instância do cliente MongoDB, passando o host do banco de dados como argumento
     await client.connect(); // Conectando ao banco de dados
 
@@ -32,4 +31,10 @@ let updateOne = async (collection, object, param)=>{
         );
     return result;
 }
-module.exports = { findAll,findOne,updateOne }; // Exportando a função 'findAll' como um módulo
+
+async function insertOne(collection,objeto){
+    const db = await connect();
+    return db.collection(collection).insertOne(objeto);
+}
+
+module.exports = { findAll,findOne,updateOne,insertOne }; // Exportando a função 'findAll' como um módulo
