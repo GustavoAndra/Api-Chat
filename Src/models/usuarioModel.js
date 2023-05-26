@@ -15,4 +15,4 @@ let buscarUsuario = async (idUser) => {
 let alterarUsuario = async (user) => {
     return await db.updateOne("usuarios", user, { _id: user._id });
 }
-module.exports = { entrar }; // Exportando a função 'entrar' como um módulo
+module.exports = {entrar}; // Exportando a função 'entrar' como um módulo
