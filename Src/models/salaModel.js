@@ -1,9 +1,7 @@
+// Importando o módulo 'db' do arquivo './db'
 const db = require("./db");
-function listarSalas() {
-    return db.findAll("salas");
-}
-module.exports = { listarSalas };
 
+// Função para listar as salas
 function listarSalas() {
     return [
         {
@@ -30,4 +28,4 @@ function listarSalas() {
         }
     ];
 }
-module.exports = { listarSalas };
+module.exports = { listarSalas }; // Exportando a função 'listarSalas' como um módulo

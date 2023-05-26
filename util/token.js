@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 
+// Função para verificar se um token é válido
 const checkToken = async (token, id, key) => {
   try {
     const decoded = await verifyToken(token, key);
@@ -9,6 +10,7 @@ const checkToken = async (token, id, key) => {
   }
 };
 
+// Função para verificar a validade de um token
 const verifyToken = (token, key) => {
   return new Promise((resolve, reject) => {
     jwt.verify(token, key, (err, decoded) => {
@@ -21,6 +23,7 @@ const verifyToken = (token, key) => {
   });
 };
 
+// Função para gerar um novo token com base em um ID e chave
 const setToken = async (id, key) => {
   if (id) {
     try {
@@ -33,6 +36,7 @@ const setToken = async (id, key) => {
   return false;
 };
 
+// Função para gerar um novo token
 const signToken = (payload, key) => {
   return new Promise((resolve, reject) => {
     jwt.sign(payload, key, { expiresIn: 28800 }, (err, token) => {
@@ -44,8 +48,4 @@ const signToken = (payload, key) => {
     });
   });
 };
-
-module.exports = {
-  checkToken,
-  setToken
-};
+module.exports = {checkToken,setToken};
