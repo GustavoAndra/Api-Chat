@@ -1,21 +1,4 @@
-const db = require("./db");
 
-let buscarSala = async (idsala) => {
-  return db.findOne("salas", { _id: idsala });
-};
-
-let atualizarMensagens = async (sala) => {
-  return await db.updateOne("salas", { _id: sala._id }, sala);
-};
-
-let buscarMensagens = async (idsala, timestamp) => {
-  let sala = await buscarSala(idsala);
-  if (sala.msgs) {
-    let msgs = sala.msgs.filter((msg) => msg.timestamp >= timestamp);
-    return msgs;
-  }
-  return [];
-};
 
 function listarSalas() {
   return [
@@ -37,4 +20,4 @@ function listarSalas() {
     },
   ];
 }
-module.exports = { listarSalas, buscarSala, atualizarMensagens, buscarMensagens };
+module.exports = { listarSalas}

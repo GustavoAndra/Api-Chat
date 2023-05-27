@@ -2,6 +2,7 @@ let express = require("express");
 let app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+const token = require("../util/token");
 
 // Criação de um objeto de roteador
 const router = express.Router();
@@ -73,4 +74,4 @@ app.use("/sala/entrar", router.post("/sala/entrar", async (req, res) => {
     res.status(200).send(resp);
 }));
 
-module.exports = app;
+module.exports = app; 
