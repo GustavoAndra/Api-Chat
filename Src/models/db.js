@@ -1,40 +1,51 @@
-const { MongoClient, ObjectId } = require("mongodb");
+const { MongoClient, ObjectId } = require("mongodb")
 
 let singleton;
 
-async function connect() {
-  if (singleton) return singleton;
-
-  const client = new MongoClient(process.env.DB_HOST);
-  await client.connect();
-
-  singleton = client.db(process.env.DB_DATABASE);
-  return singleton;
+let connect = async () => {
+	
+	if(singleton) return singleton;
+	
+	const client = new MongoClient(process.env.DB_HOST);
+	
+	await client.connect();
+	
+	singleton = client.db(process.env.DB_DATABASE);
+	
+	return singleton;
 }
 
-async function findOne(collection, filter) {
-  const db = await connect();
-  return db.collection(collection).findOne(filter);
+let findAll = async (collection)=>{
+	const db = await connect();
+	return await db.collection(collection).find().toArray();
 }
 
-async function updateOne(collection, filter, update) {
-  const db = await connect();
-  return db.collection(collection).updateOne(filter, update);
-}
-
-async function insertOne(collection, document) {
-  const db = await connect();
-  return db.collection(collection).insertOne(document);
-}
-
-async function findAll(collection) {
-  const db = await connect();
-  return db.collection(collection).find().toArray();
-}
-
-module.exports = {
-  findOne,
-  updateOne,
-  insertOne,
-  findAll
+let insertOne = async (collection, object)=>{
+	const db = await connect();
+	return await db.collection(collection).insertOne(object);
 };
+
+let findOne = async (collection, _id)=>{
+	const db = await connect();
+	let obj= await db.collection(collection).find({'_id':new ObjectId(_id)}).toArray();
+	if(obj)
+		return obj[0];
+	return false;
+}
+
+let updateOne= async (collection, object, param)=>{
+	const db = await connect();
+	let result= await db.collection(collection).updateOne(param, { $set: object} );
+	return result;
+}
+
+let deleteOne= async (collection, object)=>{
+
+}
+module.exports = {
+	findAll,
+	insertOne,
+	findOne,
+	updateOne,
+	deleteOne
+}
