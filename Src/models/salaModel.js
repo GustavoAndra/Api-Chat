@@ -5,9 +5,9 @@ let listarSalas = async ()=>{
 		return salas;
 };
 
-let buscarSala = async (idsala)=>{
-	return db.findOne("salas",idsala);
-}
+let buscarSala = async (idsala) => {
+	return await db.findOne("salas", { _id: idsala });
+  };
 
 let atualizarMensagens=async (sala)=>{
 	return await db.updateOne("salas", sala,{_id:sala._id});
@@ -26,4 +26,8 @@ let buscarMensagens = async (idsala, timestamp)=>{
 		}
 		return [];
 }
-module.exports = {listarSalas, buscarSala, atualizarMensagens, buscarMensagens};
+
+let criarSala = async (sala) => {
+    return await db.insertOne("salas", sala);
+  }
+module.exports = {listarSalas, buscarSala, atualizarMensagens, buscarMensagens, criarSala};
