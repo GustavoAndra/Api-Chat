@@ -1,0 +1,45 @@
+*{
+    font-family: 'Creepster', cursive;
+}
+.body{
+    background-color: #3A3838;
+}
+#salasTitle, h1{
+    font-family: 'Creepster', cursive;
+    color: #fff;
+    margin-top: 100px;
+    margin-left: 80px;
+}
+.criar svg{
+    margin-top: 80px;
+    margin-left: 380px;
+}
+form{
+    width: 180px;
+}
+.criar svg{
+    margin-left: 180px;
+}
+.retangulo{
+width: 1100px;
+height: 600px;
+right: 100px;
+margin-top: 40px;
+background: #312E2E;
+border: 1px solid #FFFFFF;
+color: #fff;
+}
+.cadeado
+{
+    margin-left: 180px;
+}
+.pessoas-sala{
+    margin-left: 180px;
+}
+.retangulo .row{
+    margin-left: 0.5px;
+width: 1100px;
+border-bottom: 3px solid #FFFFFF;
+transform: matrix(1, 0, 0, 1, 0, 0);
+margin-top: 10px;
+}
