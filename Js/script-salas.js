@@ -7,7 +7,14 @@ var salasTitle = document.getElementById("salasTitle");
 if (nick) {
     // Define o nome como título da página de salas
     salasTitle.textContent = nick;
+    // Armazena o nome do usuário na sessionStorage
+    sessionStorage.setItem("nick", nick);
 } else {
-    // Redireciona de volta para a página de login
-    window.location.href = "index.html";
+    // Obtém o nome do usuário armazenado na sessionStorage
+    var storedNick = sessionStorage.getItem("nick");
+
+    if (storedNick) {
+        // Exibe o nome armazenado como título da página de salas
+        salasTitle.textContent = storedNick;
+    } 
 }
