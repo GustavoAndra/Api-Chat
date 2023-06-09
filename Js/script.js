@@ -9,10 +9,8 @@ function formSubmit(event) {
 
     if (nick !== "") {
         // Redireciona para a página das salas
-        window.location.href = "salas.html?nick=" + encodeURIComponent(nick);
+        window.location.href = "page/salas.html?nick=" + encodeURIComponent(nick);
     }
 }
-
 // Adiciona o evento de envio do formulário
 loginForm.addEventListener("submit", formSubmit);
-
