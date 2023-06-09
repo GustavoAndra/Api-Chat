@@ -1,75 +1,90 @@
 * {
-    font-family: 'Creepster', cursive;
+  font-family: 'Creepster', cursive;
 }
 .body {
-    background-color: #3A3838;
+  background-color: #3A3838;
 }
 .titulo{
-    color: #fff;
-    justify-content: center;
-    
-} 
+  color: #fff;
+  justify-content: center;
+}
 .retangulo {
-    width: 1055px;
-  height: 400px;
+  position: relative;
+  width: auto;
+  max-width: 1200px;
+  height: 500px;
   background: #312E2E;
   border: 1px solid #FFFFFF;
   position: relative;
   left: 50%;
-  margin-top: 200px;
+  margin-top: 250px;
   transform: translate(-50%, -50%);
 }
-
-.input-label{
-    color: #FFFFFF;
-    margin-top: 20px;
+.input-label {
+  color: #FFFFFF;
+  margin-top: 20px;
 }
-inpu.custom-inputt{   
-    width: 350px;
-    height: 40px;
-    background-color: #3A3838;
-    border: 1px solid #FFFFFF;
-    border-radius: 10px;
-    margin-top: 30px;
-    text-align: center;
+input.custom-input {
+  width: 100%;
+  max-width: 500px;
+  height: 40px;
+  background-color: #fff;
+  border: 1px solid #FFFFFF;
+  border-radius: 10px;
+  margin-top: 30px;
+  text-align: center;
 }
 #chaveSalaWrapper {
-    display: none;
+  display: none;
 }
 .button-entrar button {
-    border-radius: 40px;
+  border-radius: 40px;
+  min-width: 200px;
+  height: 53px;
+  margin-top: 20px;
+  background: #6B4EFF;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all 200ms linear;
+  padding: 0 30px;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #000;
+  box-shadow: 0 8px 24px 0 rgba(255, 235, 167, .2);
+  text-decoration: none;
+}
+.button-entrar:active,
+.button-entrar:focus {
+  color: #000;
+  box-shadow: 0 8px 24px 0 rgba(16, 39, 112, .2);
+}
+.button-entrar:hover {
+  color: #000;
+  box-shadow: 0 8px 24px 0 rgba(16, 39, 112, .2);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+.link-unstyled {
+  text-decoration: none;
+  color: inherit;
+}
+@media (max-width: 576px) {
+  .retangulo {
+    width: auto;
+    margin-top: 400px;
+    height: 700px;
+  }
+  .custom-input {
     width: 100%;
-    max-width: 242px;
-    height: 53px;
-    margin-left: 50px;
-    margin-top: 50px;
-    background: #6B4EFF;
-    border: none;
-    font-size: 15px;
-    font-weight: 600;
-    text-transform: uppercase;
-    transition: all 200ms linear;
-    padding: 0 30px;
-    letter-spacing: 1px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #000;
-    box-shadow: 0 8px 24px 0 rgba(255, 235, 167, .2);
-    text-decoration: none;
+    max-width: 350px;
   }
-  .button-entrar:active,
-  .button-entrar:focus {
-    color: #000;
-    box-shadow: 0 8px 24px 0 rgba(16, 39, 112, .2);
+  .button-entrar button {
+    max-width: 100%;
+    margin-left: 0;
   }
-  .button-entrar:hover {
-    color: #000;
-    box-shadow: 0 8px 24px 0 rgba(16, 39, 112, .2);
-    transform: translateY(-2px);
-    text-decoration: none;
-  }
-  a:hover{
-    text-decoration: none;
-  }
+}
