@@ -1,45 +1,105 @@
-*{
+* {
     font-family: 'Creepster', cursive;
 }
-.body{
+.body {
     background-color: #3A3838;
 }
-#salasTitle, h1{
+#salasTitle {
     font-family: 'Creepster', cursive;
     color: #fff;
     margin-top: 100px;
+    margin-left: 120px;
+}
+.Salas h2 {
+    margin-left: 180px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    color: #fff;
+}
+.salas-container {
+    margin-top: -50px;
     margin-left: 80px;
+    color: #fff;
 }
-.criar svg{
+.sair svg {
     margin-top: 80px;
-    margin-left: 380px;
+    margin-left: 280px;
 }
-form{
-    width: 180px;
+.criar svg {
+    margin-top: 40px;
+    margin-left: 50px;
 }
-.criar svg{
+
+.custom-input {
+    margin-left: 100px;
+    margin-top: 50px;
+    width: 350px;
+    height: 40px;
+    background: #3A3838;
+    border: 1px solid #FFFFFF;
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
+}
+.custom-button {
+    margin-top: 50px;
+}
+.retangulo {
+    width: 100%;
+    max-width: 1100px;
+    height: 410px;
+    margin-left: 80px;
+    background: #312E2E;
+    border: 1px solid #FFFFFF;
+    color: #fff;
+    padding: 3px;
+    overflow: auto; /* Adicione esta linha para habilitar a rolagem caso o conteúdo exceda a altura definida */
+  }
+  
+  .retangulo .row:not(:last-child) {
+    border-bottom: 1px solid #FFFFFF;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
+  
+  
+.cadeado {
     margin-left: 180px;
 }
-.retangulo{
-width: 1100px;
-height: 600px;
-right: 100px;
-margin-top: 40px;
-background: #312E2E;
-border: 1px solid #FFFFFF;
-color: #fff;
-}
-.cadeado
-{
+.pessoas-sala {
     margin-left: 180px;
 }
-.pessoas-sala{
-    margin-left: 180px;
+@media (max-width: 767px) {
+    .sair svg {
+        margin-top: -80px;
+    }
+    
+    .salas-container {
+        margin-left: 0;
+    }
+    
+    .custom-input {
+        margin-left: 0;
+    }
+    
+    .custom-button {
+        margin-left: 0;
+    }
+    
+    .retangulo {
+        margin: 40px 10px;
+    }
 }
-.retangulo .row{
-    margin-left: 0.5px;
-width: 1100px;
-border-bottom: 3px solid #FFFFFF;
-transform: matrix(1, 0, 0, 1, 0, 0);
-margin-top: 10px;
-}
+@media (max-width: 767px) {
+    .retangulo .row {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .retangulo .row > div {
+      margin-bottom: 10px;
+    }
+    .retangulo{
+        height: 820px;
+    }
+  }
