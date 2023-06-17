@@ -20,24 +20,31 @@ if (nick) {
     }
 }
 
-// Obtém todos os elementos das salas
-var salas = document.getElementsByClassName("row");
+function redirecionarParaSala(elemento) 
+{
+    var nomeSala = elemento.innerText;
+    var svgElement = elemento.querySelector('svg.cadeado');
 
-// Adiciona um evento de clique a cada sala
-for (var i = 0; i < salas.length; i++) {
-    salas[i].addEventListener("click", function()
-     {
-        // Verifica se a sala é privada
-        var isPrivada = this.getAttribute("data-privada") === "true";
-
-        if (isPrivada) 
-        {
-            // Redireciona a página para a inserção do código da sala
-            window.location.href = "sala-privada";
-        } 
-        else
-         {
-            window.location.href = "sala-publica";
-        }
-    });
+    if (svgElement == null) {
+        window.location.href = "sala-publica.html?sala=" + encodeURIComponent(nomeSala);
+    } else {
+        // Caso contrário, redirecionar para a sala pública
+        window.location.href = "sala-privada.html?sala=" + encodeURIComponent(nomeSala);
+    }
 }
+
+// Selecionar todos os elementos com a classe "cadeado"
+var elementosCadeado = document.querySelectorAll('.cadeado');
+
+// Percorrer os elementos encontrados
+elementosCadeado.forEach(function(elemento)
+ {
+  // Encontrar o elemento pai que contém a sala
+  var sala = elemento.closest('.row');
+  
+  // Adicionar o evento de clique para redirecionar para a sala privada
+  sala.addEventListener('click', function() {
+    var nomeSala = sala.querySelector('h2').innerText;
+    window.location.href = "sala-privada.html?sala=" + encodeURIComponent(nomeSala);
+  });
+});
