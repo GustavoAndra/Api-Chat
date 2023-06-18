@@ -5,10 +5,66 @@
   }
 .body {
     background-color: #3A3838;
-  }
+}
 #nomeSala{
   color: #fff;
+  margin-top: 8vh;
+  margin-left: 7vw;
 }
-#codigo-sala h2{
+#codigo-sala{
   color: #fff;
+  margin-top: 8vh;
+  margin-left: 7vw;
+}
+svg{
+  margin-top: 3vh;
+}
+#chat-messages {
+  width: 100%;
+  max-width: 1100px;
+  height: 410px;
+  margin-left: 80px;
+  background: #312E2E;
+  border: 1px solid #FFFFFF;
+  color: #fff;
+  padding: 3px;
+  overflow: auto; /* Adicione esta linha para habilitar a rolagem caso o conteúdo exceda a altura definida */
+}
+  #chat-input {
+    position: fixed;
+    bottom: 40px;
+    left: 5vw;
+    color: #000;
+  }
+  #message-input {
+    width: 930px;
+    padding: 5px;
+    border: none;
+    border-radius: 15px;
+    outline: none;
+    box-shadow: none;
+    margin-left:25px;
+    background-color: #312E2E;
+    color: #fff;
+  }
+#send-button {
+  padding: 5px 5px;
+  border-radius: 40px;
+  width: 150px;
+  margin-left: 3vh;
+}
+@media (max-width: 567px)
+{
+  svg{
+    margin-right: 70vw;
+  }
+  #chat-messages{
+    margin-left: -1vw;
+  }
+  #message-input{
+    width: 250px;
+  }
+  #send-button{
+    margin-left: 1vh;
+  }
 }

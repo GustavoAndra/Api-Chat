@@ -61,14 +61,11 @@
     padding: 3px;
     overflow: auto; /* Adicione esta linha para habilitar a rolagem caso o conteúdo exceda a altura definida */
   }
-  
   .retangulo .row:not(:last-child) {
     border-bottom: 1px solid #FFFFFF;
     margin-bottom: 10px;
     padding-bottom: 10px;
   }
-  
-  
 .cadeado {
     margin-left: 180px;
 }
