@@ -61,11 +61,16 @@ svg{
   #chat-messages{
     margin-left: -1vw;
   }
-  #message-input{
-    width: 250px;
-  }
+ 
   #send-button{
-    margin-left: 1vh;
+    margin-right: 5vh;
+    margin-top: 180px;
+    width: 100px;
+  }
+  #message-input{
+    width: 200px;
+    margin-top: 180px;
+    margin-left: -15px;
   }
 }
 .user-name {
