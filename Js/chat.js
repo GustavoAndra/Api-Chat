@@ -1,4 +1,3 @@
-// Função para enviar mensagem
 function sendMessage() {
     var messageInput = document.getElementById('message-input');
     var message = messageInput.value.trim();
@@ -11,23 +10,30 @@ function sendMessage() {
         var chatMessage = document.createElement('div');
         chatMessage.classList.add('chat-message');
 
-        var avatarImg = document.createElement('img');
-        avatarImg.src = 'path-to-your-user-avatar';
-        avatarImg.alt = storedNick; // Usando o nome de usuário armazenado
+        var userNameElement = document.createElement('p');
+        userNameElement.classList.add('user-name');
+        userNameElement.textContent = storedNick; // Adicionando o nome de usuário
 
-        avatarImg.classList.add('user-avatar');
+        var messageBalloon = document.createElement('div');
+        messageBalloon.classList.add('message-balloon');
 
         var messageContent = document.createElement('p');
         messageContent.classList.add('message-content');
-        messageContent.textContent =  message; // Adicionando o nome de usuário à mensagem
+        messageContent.textContent = message; // Adicionando a mensagem
 
-        chatMessage.appendChild(avatarImg);
-        chatMessage.appendChild(messageContent);
+        messageBalloon.appendChild(messageContent);
+
+        chatMessage.appendChild(userNameElement);
+        chatMessage.appendChild(messageBalloon);
 
         chatMessages.appendChild(chatMessage);
         messageInput.value = '';
+
+        // Rolar para baixo automaticamente
+        chatMessages.scrollTop = chatMessages.scrollHeight;
     }
 }
+
 // Evento de clique no botão "Enviar"
 var sendButton = document.getElementById('send-button');
 sendButton.addEventListener('click', sendMessage);
@@ -42,28 +48,30 @@ messageInput.addEventListener('keydown', function(event) {
 });
 // Obtém a referência ao elemento do chat-messages
 const chatMessages = document.getElementById('chat-messages');
-// Função para adicionar uma mensagem ao chat
-function addMessage(message, userName, userAvatar) {
-  const chatMessage = document.createElement('div');
-  chatMessage.classList.add('chat-message');
 
-  const avatarImg = document.createElement('img');
-  avatarImg.src = `Img/${userAvatar}`;
-  avatarImg.alt = userName;
-  avatarImg.classList.add('user-avatar');
-
-  const messageContent = document.createElement('p');
-  messageContent.classList.add('message-content');
-  messageContent.textContent = `    ${message}`;
-
-  chatMessage.appendChild(avatarImg);
-  chatMessage.appendChild(messageContent);
-
-  chatMessages.appendChild(chatMessage);
-}
+// Função para adicionar uma mensagem estática ao chat
+function addStaticMessage(message, userName) {
+    const chatMessage = document.createElement('div');
+    chatMessage.classList.add('chat-message');
+  
+    const userNameElement = document.createElement('p');
+    userNameElement.classList.add('user-name');
+    userNameElement.textContent = userName;
+  
+    const messageContent = document.createElement('p');
+    messageContent.classList.add('message-content', 'static-message');
+    messageContent.textContent = message;
+  
+    chatMessage.appendChild(userNameElement);
+    chatMessage.appendChild(messageContent);
+  
+    chatMessages.appendChild(chatMessage);
+  }
+  
   // Adiciona mensagens estáticas ao chat
-  addMessage('Olá, como posso ajudar?', 'Galinheta', '../');
-  addMessage('Falaaaa gurizadaaa.....', 'ANTONIE', 'caminho-da-imagem-usuario-2');
-  addMessage('G’morning my friends!!!!!!!!!', 'RHYSAND', 'caminho-da-imagem-usuario-1');
-  addMessage('IIIII, OLÁ O GRINGUINHO', 'XAULIN-ASSADO', 'caminho-da-imagem-usuario-1');
-  addMessage('Respeita as mina, menor', 'PESQUEI-ONTEM', 'caminho-da-imagem-usuario-1');
+  addStaticMessage('Olá, como posso ajudar?', 'Galinheta');
+  addStaticMessage('Falaaaa gurizadaaa.....', 'ANTONIE');
+  addStaticMessage('G’morning my friends!!!!!!!!!', 'RHYSAND');
+  addStaticMessage('IIIII, OLÁ O GRINGUINHO', 'XAULIN-ASSADO');
+  addStaticMessage('Respeita as mina, menor', 'PESQUEI-ONTEM');
+  

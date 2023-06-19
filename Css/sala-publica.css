@@ -68,3 +68,25 @@ svg{
     margin-left: 1vh;
   }
 }
+.user-name {
+  color: #fff; /* Altere para a cor desejada */
+}
+.message-balloon {
+  display: inline-block;
+  background-color: #d3d3d3;
+  padding: 8px;
+  border-radius: 5px;
+  width: auto;
+  height: 40px;
+  margin-left: 20px;
+  margin-top: -15px;
+  color: #000;
+}
+/* Estilo para as mensagens estáticas */
+.static-message {
+  display: inline-block;
+  background-color: #d3d3d3;
+  padding: 8px;
+  border-radius: 5px;
+  color: #000;
+}
