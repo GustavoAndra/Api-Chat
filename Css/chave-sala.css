@@ -6,7 +6,6 @@
   .body {
     background-color: #3A3838;
   }
-
   * {
     font-family: 'Creepster', cursive;
   }
@@ -45,7 +44,6 @@
     margin-left: 350px;
     margin-bottom: 50px;
   }
-  
   #chaveSalaWrapper {
     display: none;
   }
@@ -65,20 +63,17 @@
     box-shadow: 0 8px 24px 0 rgba(255, 235, 167, .2);
     margin-left: 180px;
 }
-
 .custom-button:active,
 .custom-button:focus {
     color: #000;
     box-shadow: 0 8px 24px 0 rgba(16, 39, 112, .2);
 }
-
 .custom-button:hover {
     color: #000;
     box-shadow: 0 8px 24px 0 rgba(16, 39, 112, .2);
     transform: translateY(-2px);
     text-decoration: none;
 }
-
   .col-lg-4 a {
     text-decoration: none;
     color: inherit; /* opcionalmente, você pode definir a cor do texto para herdar o valor padrão */
@@ -89,8 +84,7 @@
     justify-content: center;
     align-items: center;
 }
-
-.titulo-sala{
+.titulo-sala , .nomeSala{
     color: #fff;
     display: flex;
     justify-content: center;

@@ -18,7 +18,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-4 col-md-12">
-                 <h2 id="nomeSala"></h2>
+              <h1 class="nomeSala" id="nomeSala"></h1>
             </div>
             <div class="col-lg-2 col-md-12">
                  <h1 id="codigo-sala">44GHDJ55</h1>
@@ -45,27 +45,34 @@
         </div>
      </div>
 
+     
      <div class="container-fluid">
-        <div class="retangulo">
-          <div class="row">
-            <div class="col-lg-12">
-                <div id="chat-messages"></div>
-            </div>
-
-              <div class="col-lg-12">
-                <div id="chat-input" class="d-flex">
+      <div class="retangulo">
+        <div class="row">
+          <div class="col-lg-12">
+            <div id="chat-messages"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 col-sm-6">
+            <div id="chat-input" class="d-flex flex-column flex-lg-row align-items-lg-center">
+              <div class="col-lg-10">
                 <input type="text" id="message-input" class="form-control-lg" placeholder="Digite sua mensagem">
+              </div>
+              <div class="col-lg-2 mt-2 mt-lg-0 col-sm-6 d-flex justify-content-sm-end">
                 <button id="send-button" type="button" class="btn btn-outline-primary">Enviar</button>
               </div>
-              </div>
+            </div>
           </div>
-        </div><!-- Final do Retangulo -->
-      </div><!-- Final do Container -->
+        </div>
+      </div><!-- Final do Retangulo -->
+    </div><!-- Final do Container -->
 </body>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <script src="../Js/chat.js"></script>
     <script src="../Js/script-salas.js"></script>
-    <script src="../Js/sala-publica.js"></script>
+    <script src="../Js/chave-sala.js"></script>
+    <script src="../Js/sala-privada.js"></script>
     <script src="../Js/criar-sala.js"></script>
 </html>
