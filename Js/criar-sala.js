@@ -2,15 +2,19 @@ const privadaCheckbox = document.getElementById("privada");
 const chaveSalaWrapper = document.getElementById("chaveSalaWrapper");
 
 privadaCheckbox.addEventListener("change", function() {
-  if (privadaCheckbox.checked) {
+  if (privadaCheckbox.checked) 
+  {
     chaveSalaWrapper.style.display = "block";
-  } else {
+  } 
+  else
+   {
     chaveSalaWrapper.style.display = "none";
   }
 });
-
 // Função para redirecionar para a sala e exibir o nome da sala
-function redirecionarSala() {
+function redirecionarSala(event) {
+  event.stopPropagation(); // Impede a propagação do evento de clique para evitar o redirecionamento indesejado
+
   var isPrivada = document.getElementById("privada").checked;
   var nomeSala = document.getElementById("nome").value;
 
