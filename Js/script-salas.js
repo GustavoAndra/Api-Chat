@@ -45,20 +45,11 @@ document.addEventListener('DOMContentLoaded', function() {
         sala.addEventListener('click', function() {
           redirecionarParaChaveSala(nomeSala);
         });
+      } else {
+        sala.addEventListener('click', function() {
+          redirecionarParaSalaPublica(nomeSala);
+        });
       }
-    }
-  });
-
-  // Verifica se há salas sem cadeado e redireciona para a sala pública
-  var salasSemCadeado = document.querySelectorAll('.livre');
-  salasSemCadeado.forEach(function(sala) {
-    var nomeSalaElemento = sala.querySelector('h2');
-    if (nomeSalaElemento) {
-      var nomeSala = nomeSalaElemento.innerText;
-      sala.addEventListener('click', function() 
-      {
-        redirecionarParaSalaPublica(nomeSala);
-      });
     }
   });
 });

@@ -68,13 +68,10 @@ svg{
   }
 
   #send-button{
-   
-    
     width: 100px;
   }
   #message-input{
     width: 220px;
-
     margin-left: -10px;
   }
 }
