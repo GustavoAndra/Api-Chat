@@ -36,20 +36,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
   elementosCadeado.forEach(function(elemento) {
     var sala = elemento.closest('.row');
-    var nomeSala = sala.querySelector('h2');
+    var nomeSalaElement = sala.querySelector('h2');
+    var nomeSala = nomeSalaElement.textContent;
 
-    if (nomeSala) {
-      nomeSala = nomeSala.innerText;
-
-      if (elemento.classList.contains('cadeado')) {
-        sala.addEventListener('click', function() {
-          redirecionarParaChaveSala(nomeSala);
-        });
-      } else {
-        sala.addEventListener('click', function() {
-          redirecionarParaSalaPublica(nomeSala);
-        });
-      }
+    if (elemento.classList.contains('cadeado')) {
+      sala.addEventListener('click', function() {
+        redirecionarParaChaveSala(nomeSala);
+      });
+    } else {
+      sala.addEventListener('click', function() {
+    
+        redirecionarParaSalaPublica(nomeSala);
+      });
     }
   });
 });

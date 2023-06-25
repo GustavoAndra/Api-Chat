@@ -9,18 +9,22 @@ document.addEventListener('DOMContentLoaded', function() {
       chaveSalaWrapper.style.display = "none";
     }
   });
+});
+
 // Função para redirecionar para a sala e exibir o nome da sala
-function redirecionarSala(_event) {
- 
+function redirecionarSala(event) {
   var isPrivada = document.getElementById("privada").checked;
   var nomeSala = document.getElementById("nome").value;
 
   if (isPrivada) {
     // Redirecionar para a sala privada e passar o nome como parâmetro
     window.location.href = "sala-privada.html?nome=" + encodeURIComponent(nomeSala);
-  } 
+  } else {
+    // Redirecionar para a sala pública
+    window.location.href = "sala-publica.html?nome=" + encodeURIComponent(nomeSala);
+  }
 }
+
 // Adicionar um ouvinte de evento ao botão "Criar"
 var criarButton = document.querySelector(".button-entrar button");
 criarButton.addEventListener("click", redirecionarSala);
-});

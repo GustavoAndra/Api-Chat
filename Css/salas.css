@@ -12,12 +12,25 @@
     margin-top: 100px;
     margin-left: 120px;
 }
-.Salas h2 {
+h1{
+    margin-left: 150px;
+    margin-top: 5px;
+    margin-bottom: 50px;
+    color: #fff;
+    cursor: pointer;
+}
+.Salas h2{
     margin-left: 180px;
     margin-top: 10px;
     margin-bottom: 50px;
     color: #fff;
+    cursor: pointer;
 }
+ h2:hover,
+h2:active {
+  color: #0000FF; /* Cor de fundo para o efeito de toque */
+}
+
 .salas-container {
     margin-top: -50px;
     margin-left: 80px;

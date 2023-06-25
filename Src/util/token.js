@@ -12,7 +12,6 @@ const checkToken = async (token, id, key)=> {
 	}
 };
 
-
 const setToken = async (id, key)=>{
 	
 	if(id){
