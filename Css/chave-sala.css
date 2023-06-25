@@ -94,10 +94,9 @@
 @media (max-width: 567px)
 {
     input {
-        margin-left: 10px;
+         margin-left: 3px;
         max-width: 400px;
     }
-
     .custom-button{
         margin-left: 100px;
     }
